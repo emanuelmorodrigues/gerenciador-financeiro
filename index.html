@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header><h1>Gerenciador Financeiro 1.0</h1></header>
+    <div class="menu-insercao">
+        <!-- <form action="" method="">
+        </form> -->
+        <input type="text" placeholder="Descrição">
+        <input type="text" placeholder="Valor">
+        <input type="text" placeholder="Data">
+        <input type="radio" id="gastos" name="opcao-add" value="gastos">
+        <label for="gastos">Gastos</label>
+        <input type="radio" id="ganhos" name="opcao-add" value="ganhos">
+        <label for="ganhos">Ganhos</label>
+        <button type="">Adicionar</button>
+        <button type="">Buscar</button>
+    </div>
+    <div class="container-gasto-ganho">
+        <div class="gastos">
+            <h3>Gastos</h3>
+            <table>
+                <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+                <tr><td>Sanduba</td><td>R$10,00</td><td>99/99/9999</td></tr>
+     
+            </table>
+        </div>
+       
+        <div class="ganhos">
+            <h3>Ganhos</h3>
+            <table>
+                <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+                <tr><td>Mamae</td><td>R$30,00</td><td>99/99/9999</td></tr>
     
+            </table>
+            
+        </div>
+
+        <div class="resumo">
+            <h3>Resumo</h3>
+            <table>
+                <tr><th>Total de Ganhos</th><th>Total de Gastos</th><th>Total Restante</th></tr>
+                <tr><td>+R$30,00</td><td>-R$10,00</td><td>R$20,00</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
 </body>
 </html>
