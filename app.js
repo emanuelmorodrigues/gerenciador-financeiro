@@ -3,6 +3,9 @@ const handlebars = require('express-handlebars')
 const bodyparser = require('body-parser')
 const port = 8081
 
+
+const contaController = require("./controller/contaController")
+
 //Inicializando
 const app = express()
 
@@ -20,9 +23,7 @@ app.get('/', (req, res)=>{
     res.render('telaPrincipal')
 })
 
-app.post('/add', (req, res)=>{
-    console.log(req.body)   
-})
+app.post('/add', contaController.create)
 
 app.listen(port, ()=>{
     console.log(`Servidor rodando na porta ${port}`)

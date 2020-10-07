@@ -7,3 +7,5 @@ mongoose.connect("mongodb://localhost/banco").then(result =>{
 }).catch(err => {
     console.log("nao conseguiu conectar --" + err)
 })
+
+module.exports = mongoose;
