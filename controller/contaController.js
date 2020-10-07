@@ -14,12 +14,15 @@ module.exports = {
         }).catch( err =>{
             console.log("ERRO ao add --" + err)
         })
+
+        response.redirect("/")
     },
 
-    async bucar(request, response) {
-        const dados = await contas.find()
-
-        return response(dados)
+    async bucarAll(request, response) {
+        await contas.find().then(function(dados){
+            console.log(dados)
+            return response.render('telaPrincipal', {dados})
+        })
     },
 
      

@@ -19,9 +19,7 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
 //Rotas
-app.get('/', (req, res)=>{
-    res.render('telaPrincipal')
-})
+app.get('/', contaController.bucarAll)
 
 app.post('/add', contaController.create)
 
