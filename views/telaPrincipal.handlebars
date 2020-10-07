@@ -21,12 +21,17 @@
 
 </div>
 <div class="container-gasto-ganho">
+    
+    
     <div class="gastos">
+        {{#each dados}}
         <h3>Gastos</h3>
         <table>
-            <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+            <tr><th>Descrição: {{#each this}}{{descricao}}{{/each}}</th><th>Valor: {{#each this}}{{valor}}{{/each}}</th><th>Data: {{#each this}}{{data}}{{/each}}</th></tr>
             </tr>
         </table>
+        {{/each}}
+        
     </div>
 
     <div class="ganhos">
