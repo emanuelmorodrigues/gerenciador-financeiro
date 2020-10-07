@@ -20,9 +20,8 @@ app.get('/', (req, res)=>{
     res.render('telaPrincipal')
 })
 
-app.post('/', (req, res)=>{
-    //Enviar dados para o BD
-    
+app.post('/add', (req, res)=>{
+    console.log(req.body)   
 })
 
 app.listen(port, ()=>{

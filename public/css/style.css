@@ -6,18 +6,25 @@ header{
     display: flex;
     justify-content: center;
 }
-.menu-insercao{
-    margin: auto;
+
+.menu-insercao form{
     display: flex;
     justify-content: space-around;
-    padding: 10px;
-    width: 70%;
+    padding: 10px;  
+}
+
+.menu-insercao{
+    margin: auto;
+    width: 80%;
 }
 
 .container-gasto-ganho{
+    margin: auto;
+    width: 80%;
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .container-gasto-ganho h3{

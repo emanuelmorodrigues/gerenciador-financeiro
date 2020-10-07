@@ -1,48 +1,46 @@
-<header><h1>Gerenciador Financeiro 1.0</h1></header>
-    <div class="menu-insercao">
-        <!-- <form action="" method="">
-        </form> -->
-        <input type="text" placeholder="Descrição">
-        <input type="text" placeholder="Valor">
-        <input type="text" placeholder="Data">
+<header>
+    <h1>Gerenciador Financeiro 1.0</h1>
+</header>
+<div class="menu-insercao">
+    <form action="http://localhost:8081/add" method="POST">
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" placeholder="Descrição" autocomplete="off">
+        <label for="valor">Valor</label>
+        <input type="text" id="valor" name="valor" placeholder="Valor" autocomplete="off">
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data" placeholder="Data">
         <div>
             <input type="radio" id="gastos" name="opcao-add" value="gastos">
             <label for="gastos">Gastos</label>
             <input type="radio" id="ganhos" name="opcao-add" value="ganhos">
             <label for="ganhos">Ganhos</label>
         </div>
-            <button type="">Adicionar</button>
-            <button type="">Buscar</button>   
-        <div>
+        <button type="" id="add-gasto-ganho">Adicionar</button>
+        <button type="">Buscar</button>
+    </form>
 
-        </div>
-        
+</div>
+<div class="container-gasto-ganho">
+    <div class="gastos">
+        <h3>Gastos</h3>
+        <table>
+            <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+            </tr>
+        </table>
     </div>
-    <div class="container-gasto-ganho">
-        <div class="gastos">
-            <h3>Gastos</h3>
-            <table>
-                <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
-                <tr><td>Sanduba</td><td>R$10,00</td><td>99/99/9999</td></tr>
-     
-            </table>
-        </div>
-       
-        <div class="ganhos">
-            <h3>Ganhos</h3>
-            <table>
-                <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
-                <tr><td>Mamae</td><td>R$30,00</td><td>99/99/9999</td></tr>
-    
-            </table>
-            
-        </div>
 
-        <div class="resumo">
-            <h3>Resumo</h3>
-            <table>
-                <tr><th>Total de Ganhos</th><th>Total de Gastos</th><th>Total Restante</th></tr>
-                <tr><td>+R$30,00</td><td>-R$10,00</td><td>R$20,00</td></tr>
-            </table>
-        </div>
+    <div class="ganhos">
+        <h3>Ganhos</h3>
+        <table>
+            <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+        </table>
     </div>
+
+    <div class="resumo">
+        <h3>Resumo</h3>
+        <table>
+            <tr><th>Total de Ganhos</th><th>Total de Gastos</th><th>Total Restante</th></tr><tr>
+            <td>+R$30,00</td><td>-R$10,00</td><td>R$20,00</td></tr>
+        </table>
+    </div>
+</div>
