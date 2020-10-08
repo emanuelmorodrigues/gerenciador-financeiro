@@ -1,10 +1,10 @@
-const contas = require("../database/model")
+const registros = require("../database/model")
 
 module.exports = {
     async create(request, response ) {
         const {descricao, valor, data, tipoDispeca} = request.body
         
-        await new contas({
+        await new registros({
             descricao,
             valor,
             data,
@@ -18,8 +18,8 @@ module.exports = {
         response.redirect("/")
     },
 
-    async bucarAll(request, response) {
-        await contas.find().then(function(dados){
+    async buscarAll(request, response) {
+        await registros.find().then(function(dados){
             console.log(dados)
             return response.render('telaPrincipal', {dados})
         })

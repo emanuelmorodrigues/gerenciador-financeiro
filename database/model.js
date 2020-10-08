@@ -21,8 +21,8 @@ const contaSchema = mongoose.Schema({
 
 })
 
-mongoose.model("conta", contaSchema)
+mongoose.model("registros", contaSchema)
 
-const conta = mongoose.model("conta")
+const registros = mongoose.model("registros")
 
-module.exports = conta;
+module.exports = registros;

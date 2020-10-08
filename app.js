@@ -19,7 +19,7 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
 //Rotas
-app.get('/', contaController.bucarAll)
+app.get('/', contaController.buscarAll)
 
 app.post('/add', contaController.create)
 
