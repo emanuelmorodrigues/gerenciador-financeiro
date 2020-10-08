@@ -19,9 +19,10 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
 //Rotas
-app.get('/', contaController.buscarAll)
-
+app.get('/', contaController.bucarAll)
+app.delete('/:id', contaController.delete)
 app.post('/add', contaController.create)
+
 
 app.listen(port, ()=>{
     console.log(`Servidor rodando na porta ${port}`)
