@@ -16,13 +16,29 @@ module.exports = {
         })
 
         response.redirect("/")
+
     },
 
     async buscarAll(request, response) {
         await registros.find().then(function(dados){
             console.log(dados)
+
             return response.render('telaPrincipal', {dados})
         })
+    },
+
+    async delete(request, response){
+        const { id } = request.params
+
+        contas.deleteOne({
+            _id: id
+        }).then(res => {
+            console.log("removido COm sucesso")
+        }).catch( err => {
+            console.log("Falha ao remover")
+        })
+
+        response.redirect("/")
     },
 
      
