@@ -27,6 +27,8 @@ app.use(bodyparser.json())
 app.get('/', contaController.buscarAll)
 app.delete('/:id', contaController.delete)
 app.post('/add', contaController.create)
+app.get('/atualizar', contaController.busca)
+app.post('/atualizar/:id', contaController.update)
 
 
 app.listen(port, ()=>{
