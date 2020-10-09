@@ -1,44 +1,47 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-header{
-    margin: auto;
+
+header h1{
     display: flex;
     justify-content: center;
 }
 
-.menu-insercao form{
+header{
+    margin-bottom: 25px;
+}
+
+.menu-insercao *{
+    margin: 0 5px;
+}
+
+.container{
+    width: 100%;
+    margin: 10px 10px;
     display: flex;
     justify-content: space-around;
-    padding: 10px;  
 }
 
-.menu-insercao{
-    margin: auto;
-    width: 80%;
+.resumo{
+    width: 25%;
 }
 
-.container-gasto-ganho{
-    margin: auto;
-    width: 80%;
-    margin-top: 10px;
+#actions {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
-.container-gasto-ganho h3{
-    margin: 0;
+#actions a{
+    cursor: pointer;
 }
 
-/* Bordas e sombras */
-.gastos, .ganhos, .resumo, .menu-insercao{
-    border:  solid 1px #333;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-tr, td, th{
-    border: 1px solid #333;
-    border-radius: 5px;
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

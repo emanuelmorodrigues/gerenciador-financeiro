@@ -2,13 +2,13 @@ const registros = require("../database/model")
 
 module.exports = {
     async create(request, response ) {
-        const {descricao, valor, data, tipoDispeca} = request.body
+        const {descricao, valor, data, despesa} = request.body
         
         await new registros({
             descricao,
             valor,
             data,
-            tipoDispeca,
+            despesa,
         }).save().then( res => {
             console.log("add com SUCESSO --" + res)
         }).catch( err =>{

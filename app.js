@@ -1,5 +1,7 @@
 const express = require('express')
-const handlebars = require('express-handlebars')
+const Handlebars = require('handlebars')
+const expressHandlebars = require('express-handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const bodyparser = require('body-parser')
 const port = 8081
 
@@ -10,7 +12,10 @@ const contaController = require("./controller/contaController")
 const app = express()
 
 //Conf Handlebars
-app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}))
+app.engine('handlebars', expressHandlebars({
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
+}));
 app.set('view engine', 'handlebars')
 app.use(express.static('public'));
 

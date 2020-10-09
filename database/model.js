@@ -14,8 +14,8 @@ const contaSchema = mongoose.Schema({
         type: String
     },
 
-    tipoDispeca: {
-        type: String,
+    despesa: {
+        type: Boolean,
         require: true
     }
 

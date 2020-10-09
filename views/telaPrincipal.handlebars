@@ -1,51 +1,116 @@
 <header>
     <h1>Gerenciador Financeiro 1.0</h1>
 </header>
-<div class="menu-insercao">
-    <form action="http://localhost:8081/add" method="POST">
-        <label for="descricao">Descrição</label>
-        <input type="text" id="descricao" name="descricao" placeholder="Descrição" autocomplete="off">
-        <label for="valor">Valor</label>
-        <input type="text" id="valor" name="valor" placeholder="Valor" autocomplete="off">
-        <label for="data">Data</label>
-        <input type="date" id="data" name="data" placeholder="Data">
-        <div>
-            <input type="radio" id="gastos" name="opcao-add" value="gastos">
-            <label for="gastos">Gastos</label>
-            <input type="radio" id="ganhos" name="opcao-add" value="ganhos">
-            <label for="ganhos">Ganhos</label>
+<div class="menu-insercao container">
+    <form class="form-inline" action="http://localhost:8081/add" method="POST">
+        <div class="form-group">
+            <input class="form-control" name="descricao" type="text" placeholder="Descrição" autocomplete="off">
+            <input class="form-control" name="valor" type="number" step="0.01" placeholder="Valor" autocomplete="off">
+            <input class="form-control" name="data" type="date" placeholder="Data">
         </div>
-        <button type="" id="add-gasto-ganho">Adicionar</button>
-        <button type="">Buscar</button>
+
+        <div class="form-group">
+            <select class="form-control" name="despesa">
+                <option value="true">Gasto</option>
+                <option value="false">Ganho</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Adicionar</button>
+        <button class="btn btn-outline-success" type="submit" onclick="return false">Buscar</button>
     </form>
-
 </div>
-<div class="container-gasto-ganho">
-    
-    
-    <div class="gastos">
-        {{#each dados}}
-        <h3>Gastos</h3>
-        <table>
-            <tr><th>Descrição: {{#each this}}{{descricao}}{{/each}}</th><th>Valor: {{#each this}}{{valor}}{{/each}}</th><th>Data: {{#each this}}{{data}}{{/each}}</th></tr>
-            </tr>
+
+<div class="container">
+    <div class="card gastos">
+        <div class="card-header">
+            <h3 class="card-title">Gastos</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dados}}
+                {{#if despesa}}
+                <tr>
+                    <td>{{#each this}}{{descricao}}{{/each}}</td>
+                    <td>{{#each this}}{{valor}}{{/each}}</td>
+                    <td>{{#each this}}{{data}}{{/each}}</td>
+                    <td id="actions">
+                        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i
+                                class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>
+                {{/if}}
+                {{/each}}
+            </tbody>
+
         </table>
-        {{/each}}
-        
     </div>
 
-    <div class="ganhos">
-        <h3>Ganhos</h3>
-        <table>
-            <tr><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+    <div class="card ganhos">
+        <div class="card-header">
+            <h3 class="card-title">Ganhos</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dados}}
+                {{#unless despesa}}
+                <tr>
+                    <td>{{#each this}}{{descricao}}{{/each}}</td>
+                    <td>{{#each this}}{{valor}}{{/each}}</td>
+                    <td>{{#each this}}{{data}}{{/each}}</td>
+                    <td id="actions">
+                        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i
+                                class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>
+                {{/unless}}
+                {{/each}}
+                </tr>
+            </tbody>
+
         </table>
+
     </div>
 
-    <div class="resumo">
-        <h3>Resumo</h3>
-        <table>
-            <tr><th>Total de Ganhos</th><th>Total de Gastos</th><th>Total Restante</th></tr><tr>
-            <td>+R$30,00</td><td>-R$10,00</td><td>R$20,00</td></tr>
+    <div class="card resumo">
+        <div class="card-header">
+            <h3 class="card-title">Resumo</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Total de Ganhos</th>
+                    <th>Total de Gastos</th>
+                    <th>Total Restante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+R$30,00</td>
+                    <td>-R$10,00</td>
+                    <td>R$20,00</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
