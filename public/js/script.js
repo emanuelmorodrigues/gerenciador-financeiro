@@ -1,38 +1,18 @@
-// const form = document.forms[0]
-// const valor = form.elements['valor']
-// const desc = form.elements['descricao']
-// const dataForm = form.elements['data']
-// const gastoGanho = form.elements['opcao-add']
-// const btn = document.querySelector("#add-gasto-ganho")
+const registros = document.querySelectorAll('.tables tr')
+const deleteBtn = document.querySelectorAll('.delete')
+const editBtn = document.querySelectorAll('.edit')
 
+deleteBtn.forEach((del)=>{
+    del.onclick = function(e){
+        e.preventDefault()
+        // retorna o id da tag <tr>
+        const id = del.parentElement.parentElement.getAttribute('identificador') 
+        deletarRegistro(id)
+    }
+})
 
-// const gasto = document.querySelector(".gastos table tbody")
-// const ganho = document.querySelector(".ganhos table tbody")
+function deletarRegistro(id){
+    fetch(`http://localhost:8081/del/${id}`,{
+        method: 'DELETE'});
 
-// function addElemento(tagName, className = ''){
-//     const elemento = document.createElement(tagName)
-//     elemento.className = className
-//     return elemento
-// }
-
-// function parseData(data){
-//     const arrayData = data.split('-')
-//     return `${arrayData[2]}/${arrayData[1]}/${arrayData[0]}`
-// }
-
-// function addLinha(desc, valor, data){
-//     const formatData = parseData(data)
-//     return `<td>${desc}</td><td>R$${valor}</td><td>${formatData}</td>`
-// } 
-
-// function addRegistro(){
-//     const linhaTabela = addElemento('tr')
-//     linhaTabela.innerHTML = addLinha(desc.value, valor.value, data.value)
-//     console.log(linhaTabela)
-//     if(gastoGanho.value == 'gastos') gasto.appendChild(linhaTabela)
-//     else if(gastoGanho.value == 'ganhos') ganho.appendChild(linhaTabela)  
-// }
-
-// btn.onclick = function(e){
-//     addRegistro()
-// }
+}

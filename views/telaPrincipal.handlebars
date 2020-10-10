@@ -21,7 +21,7 @@
     </form>
 </div>
 
-<div class="container">
+<div class="container tables">
     <div class="card gastos">
         <div class="card-header">
             <h3 class="card-title">Gastos</h3>
@@ -38,10 +38,10 @@
             <tbody>
                 {{#each dados}}
                 {{#if despesa}}
-                <tr>
-                    <td>{{#each this}}{{descricao}}{{/each}}</td>
-                    <td>{{#each this}}{{valor}}{{/each}}</td>
-                    <td>{{#each this}}{{data}}{{/each}}</td>
+                <tr identificador={{_id}}>
+                    <td>{{descricao}}</td>
+                    <td>{{valor}}</td>
+                    <td>{{data}}</td>
                     <td id="actions">
                         <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
                         <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -72,10 +72,10 @@
             <tbody>
                 {{#each dados}}
                 {{#unless despesa}}
-                <tr>
-                    <td>{{#each this}}{{descricao}}{{/each}}</td>
-                    <td>{{#each this}}{{valor}}{{/each}}</td>
-                    <td>{{#each this}}{{data}}{{/each}}</td>
+                <tr identificador={{_id}}>
+                    <td>{{descricao}}</td>
+                    <td>{{valor}}</td>
+                    <td>{{data}}</td>
                     <td id="actions">
                         <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
                         <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>

@@ -6,7 +6,9 @@ const bodyparser = require('body-parser')
 const port = 8081
 
 
-const contaController = require("./controller/contaController")
+const contaController = require("./controller/contaController");
+const { printAll } = require('./controller/contaController');
+const { createCollection } = require('./database/model');
 
 //Inicializando
 const app = express()
@@ -25,7 +27,7 @@ app.use(bodyparser.json())
 
 //Rotas
 app.get('/', contaController.buscarAll)
-app.delete('/:id', contaController.delete)
+app.delete('/del/:id', contaController.delete)
 app.post('/add', contaController.create)
 app.get('/atualizar', contaController.busca)
 app.post('/atualizar/:id', contaController.update)
