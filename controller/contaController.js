@@ -21,6 +21,7 @@ module.exports = {
     },
 
     async buscarAll(request, response) {
+        
         await registros.find().then(function(dados){
             console.log(dados)
 
