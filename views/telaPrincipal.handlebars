@@ -17,8 +17,8 @@
         </div>
 
         <button class="btn btn-primary" type="submit">Adicionar</button>
-        <button class="btn btn-outline-success" type="submit" onclick="return false">Buscar</button>
     </form>
+        <button class="btn btn-outline-success" type="submit" onclick="return false">Buscar</button>
 </div>
 
 <div class="container tables">
@@ -39,11 +39,11 @@
                 {{#each dados}}
                 {{#if despesa}}
                 <tr identificador={{_id}}>
-                    <td>{{descricao}}</td>
-                    <td>{{valor}}</td>
-                    <td>{{data}}</td>
+                    <td class="rowData" contenteditable="false">{{descricao}}</td>
+                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData" contenteditable="false">{{data}}</td>
                     <td id="actions">
-                        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
+                        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                         <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a class="delete" title="Delete" data-toggle="tooltip"><i
                                 class="material-icons">&#xE872;</i></a>
@@ -73,11 +73,11 @@
                 {{#each dados}}
                 {{#unless despesa}}
                 <tr identificador={{_id}}>
-                    <td>{{descricao}}</td>
-                    <td>{{valor}}</td>
-                    <td>{{data}}</td>
+                    <td class="rowData" contenteditable="false">{{descricao}}</td>
+                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData" contenteditable="false">{{data}}</td>
                     <td id="actions">
-                        <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
+                        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                         <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a class="delete" title="Delete" data-toggle="tooltip"><i
                                 class="material-icons">&#xE872;</i></a>
