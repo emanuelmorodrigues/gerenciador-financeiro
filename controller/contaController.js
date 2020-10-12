@@ -1,5 +1,5 @@
-const { update } = require("../database/model")
-const registros = require("../database/model")
+const { update } = require("../database/modelRegistro")
+const registros = require("../database/modelRegistro")
 
 module.exports = {
     async create(request, response ) {
@@ -16,7 +16,7 @@ module.exports = {
             console.log("ERRO ao add --" + err)
         })
 
-        response.redirect("/")
+       return response.redirect("/")
 
     },
 
@@ -40,7 +40,8 @@ module.exports = {
             console.log("Falha ao remover")
         })
 
-        response.redirect("/")
+        response.status(200).send();
+        return response.redirect("/") 
     },
 
     async update(request, response){

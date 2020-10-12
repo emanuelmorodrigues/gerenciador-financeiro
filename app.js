@@ -6,9 +6,11 @@ const bodyparser = require('body-parser')
 const port = 8081
 
 
-const contaController = require("./controller/contaController");
+const contaController = require('./controller/contaController');
 const { printAll } = require('./controller/contaController');
-const { createCollection } = require('./database/model');
+//const { createCollection } = require('./database/contaController');
+
+const userController = require('./controller/userController');
 
 //Inicializando
 const app = express()
@@ -31,6 +33,9 @@ app.delete('/del/:id', contaController.delete)
 app.post('/add', contaController.create)
 app.get('/atualizar', contaController.busca)
 app.post('/atualizar/:id', contaController.update)
+
+app.get('/cadastro', userController.telaCadastro)
+app.post('/cadastro', userController.create)
 
 
 app.listen(port, ()=>{
