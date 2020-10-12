@@ -40,8 +40,8 @@ module.exports = {
             console.log("Falha ao remover")
         })
 
-        response.status(200).send();
-        return response.redirect("/") 
+        response.status(200).send()
+        //return response.redirect("/") 
     },
 
     async update(request, response){

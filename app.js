@@ -7,7 +7,6 @@ const port = 8081
 
 
 const contaController = require('./controller/contaController');
-const { printAll } = require('./controller/contaController');
 //const { createCollection } = require('./database/contaController');
 
 const userController = require('./controller/userController');

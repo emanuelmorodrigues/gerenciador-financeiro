@@ -8,6 +8,7 @@ deleteBtn.forEach((del)=>{
         // retorna o id da tag <tr>
         const id = del.parentElement.parentElement.getAttribute('identificador') 
         deletarRegistro(id)
+        location.reload()
     }
 })
 
