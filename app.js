@@ -10,7 +10,7 @@ const contaController = require('./controller/contaController');
 //const { createCollection } = require('./database/contaController');
 
 const userController = require('./controller/userController');
-
+const loginController = require('./controller/loginController')
 //Inicializando
 const app = express()
 
@@ -27,10 +27,13 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
 //Rotas
-app.get('/', contaController.buscarAll)
+app.get("/", loginController.telaLogin)
+app.post('/', loginController.logar)
+
+app.get('/dashboard', contaController.buscarAll)
 app.delete('/del/:id', contaController.delete)
 app.post('/add', contaController.create)
-app.get('/atualizar', contaController.busca)
+app.get('/buscar', contaController.busca)
 app.post('/atualizar/:id', contaController.update)
 
 app.get('/cadastro', userController.telaCadastro)

@@ -16,7 +16,7 @@ module.exports = {
             console.log("ERRO ao add --" + err)
         })
 
-       return response.redirect("/")
+       return response.redirect("/dashboard")
 
     },
 
@@ -56,14 +56,15 @@ module.exports = {
             if(registros.descricao != descricao){
                 registros.descricao = descricao
             }
-
+            
             if(registros.valor != valor){
                 registros.valor = valor
             }
-
+            
             if(registros.data != data){
                 registros.data = data
             }
+            
 
             registros.save().then(res => {
                 console.log("ATUALIZADO COM SUCESSO")

@@ -1,0 +1,21 @@
+  <form class="form-inline" action="http://localhost:8081/" method="POST">
+        <div class="form-group">
+            <input class="form-control" name="email" type="email" step="0.01" placeholder="Email" autocomplete="off">
+            <input class="form-control" name="senha" type="text" placeholder="Senha">
+        </div>
+
+        <button class="btn btn-primary" type="submit" onclick="salvaIdUser()">Entrar</button>
+    </form>
+</div>
+
+//isso é so para um teste 
+
+<input id= "teste" value={{user_id}}>
+
+<script>
+    async salvaIdUser => (){
+        //um teste aqui 
+    const id = document.getElementById("teste").value
+    await localStorage.setItem('user_id', id)
+    }
+</script>
