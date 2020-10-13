@@ -62,7 +62,7 @@ module.exports = {
             }
 
             if(registros.data != data){
-                registros.data != data
+                registros.data = data
             }
 
             registros.save().then(res => {
@@ -72,7 +72,8 @@ module.exports = {
             })
         })
 
-        response.redirect("/")
+        response.status(200).send()
+        //response.redirect("/")
     },
 
     async busca(request, response){

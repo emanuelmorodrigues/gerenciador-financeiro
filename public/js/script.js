@@ -33,7 +33,7 @@ editBtn.forEach((edit)=>{
 
             editarRegistro(id, obj)
 
-            // Volta para o conteúdo não editável e icone de edição.
+            // Volta para o conteúdo não editável e icone de edit
             trChilds.forEach((tr)=>{
                 tr.setAttribute('contenteditable', 'false')
             })
@@ -47,7 +47,7 @@ editBtn.forEach((edit)=>{
 
 function editarRegistro(id, obj){
     console.log(id, obj)
-    fetch(`http://localhost:8081/atualizarTeste/:${id}`,{
+    fetch(`http://localhost:8081/atualizar/${id}`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

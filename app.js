@@ -36,13 +36,6 @@ app.post('/atualizar/:id', contaController.update)
 app.get('/cadastro', userController.telaCadastro)
 app.post('/cadastro', userController.create)
 
-//rota de teste
-app.post('/atualizarTeste/:id', (req, res)=>{
-    console.log(req.params.id)
-    console.log(req.body)
-})
-
-
 app.listen(port, ()=>{
     console.log(`Servidor rodando na porta ${port}`)
 })
