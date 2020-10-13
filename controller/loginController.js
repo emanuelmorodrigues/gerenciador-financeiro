@@ -23,7 +23,7 @@ module.exports = {
         if(registros !== null){
             response.render("telaLogin",{user_id:registros._id})
             
-            response.redirect('/dashboard')
+            //response.redirect('/dashboard')
             
         }else{
             return response.send("SEM ACESSO AMIGO")
