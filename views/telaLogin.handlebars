@@ -13,9 +13,10 @@
 <input id= "teste" value={{user_id}}>
 
 <script>
-    async salvaIdUser => (){
-        //um teste aqui 
-    const id = document.getElementById("teste").value
-    await localStorage.setItem('user_id', id)
-    }
+
+
+        const id = document.getElementById("teste").value
+        localStorage.setItem('user_id', id)
+            
+        location.assign('http://localhost:8081/dashboard')
 </script>

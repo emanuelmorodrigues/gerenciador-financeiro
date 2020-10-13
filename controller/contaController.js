@@ -4,6 +4,8 @@ const registros = require("../database/modelRegistro")
 module.exports = {
     async create(request, response ) {
         const {descricao, valor, data, despesa} = request.body
+        //AQUI QUERIA PEGAR ESSE PARAMETRO, VER SE TU CONSEGUE MANDAR PELO FETCH LA PARA MIM
+        const id_user = request.headers.authorization;
         
         await new registros({
             descricao,
