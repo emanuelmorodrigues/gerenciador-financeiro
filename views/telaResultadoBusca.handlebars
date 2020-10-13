@@ -1,0 +1,77 @@
+<header>
+    <h1>Gerenciador Financeiro 1.0</h1>
+</header>
+<div class="menu-buscar container">
+    <form class="form-inline" action="http://localhost:8081/buscar" method="POST">
+        <div class="form-group">
+            <select class="form-control" name="tipoBusca">
+                <option value="descricao">Descrição</option>
+                <option value="valor">Valor</option>
+                <option value="data">Data</option>
+            </select>
+            <input class="form-control" name="valorBusca" type="text" autocomplete="off">
+            <button class="btn btn-outline-success" type="submit" onclick="return false">Buscar</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="container tables">
+    <div class="card gastos">
+        <div class="card-header">
+            <h3 class="card-title">Gastos</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dadosBuscar}}
+                {{#if despesa}}
+                <tr identificador={{_id}}>
+                    <td class="rowData" contenteditable="false">{{descricao}}</td>
+                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData" contenteditable="false">{{data}}</td>
+                </tr>
+                {{/if}}
+                {{/each}}
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="card ganhos">
+        <div class="card-header">
+            <h3 class="card-title">Ganhos</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dadosBuscar}}
+                {{#unless despesa}}
+                <tr identificador={{_id}}>
+                    <td class="rowData" contenteditable="false">{{descricao}}</td>
+                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData" contenteditable="false">{{data}}</td>
+                </tr>
+                {{/unless}}
+                {{/each}}
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

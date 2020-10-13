@@ -11,7 +11,7 @@ header{
     margin-bottom: 25px;
 }
 
-.menu-insercao *{
+.menu-insercao *, .menu-buscar *{
     margin: 0 5px;
 }
 

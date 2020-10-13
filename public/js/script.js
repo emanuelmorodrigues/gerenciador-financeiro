@@ -2,7 +2,6 @@ const registros = document.querySelectorAll('.tables tr')
 const deleteBtn = document.querySelectorAll('.delete')
 const editBtn = document.querySelectorAll('.edit')
 const addBtn = document.querySelectorAll('.add')
-const searchBtn = document.querySelector('.btn-outline-success')
 
 editBtn.forEach((edit)=>{
     edit.onclick = function(e){
@@ -53,20 +52,6 @@ function editarRegistro(id, obj){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
-    });
-}
-
-
-
-searchBtn.onclick = function(e){
-    let nome = 'emanuel'
-    e.preventDefault()
-    fetch("http://localhost:8081/teste",{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name: nome})
     });
 }
 

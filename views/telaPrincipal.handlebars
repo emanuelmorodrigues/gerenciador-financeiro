@@ -18,7 +18,21 @@
 
         <button class="btn btn-primary" type="submit">Adicionar</button>
     </form>
-        <button class="btn btn-outline-success" type="submit" onclick="return false">Buscar</button>
+</div>
+
+<div class="menu-buscar container">
+    <form class="form-inline" action="http://localhost:8081/buscarTeste" method="POST">
+        <div class="form-group">
+            <select class="form-control selectBusca" name="tipoBusca">
+                <option value="descricao">Descrição</option>
+                <option value="valor">Valor</option>
+                <option value="data">Data</option>
+            </select>
+            <input class="form-control inputBusca" name="valorBusca" type="text" autocomplete="off">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </div>
+
+    </form>
 </div>
 
 <div class="container tables">
@@ -40,7 +54,7 @@
                 {{#if despesa}}
                 <tr identificador={{_id}}>
                     <td class="rowData" contenteditable="false">{{descricao}}</td>
-                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData valorGastos" contenteditable="false">{{valor}}</td>
                     <td class="rowData" contenteditable="false">{{data}}</td>
                     <td id="actions">
                         <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
@@ -74,7 +88,7 @@
                 {{#unless despesa}}
                 <tr identificador={{_id}}>
                     <td class="rowData" contenteditable="false">{{descricao}}</td>
-                    <td class="rowData" contenteditable="false">{{valor}}</td>
+                    <td class="rowData valorGanhos" contenteditable="false">{{valor}}</td>
                     <td class="rowData" contenteditable="false">{{data}}</td>
                     <td id="actions">
                         <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
@@ -106,9 +120,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>+R$30,00</td>
-                    <td>-R$10,00</td>
-                    <td>R$20,00</td>
+                    <td id="valorTotalGanho"></td>
+                    <td id="valorTotalGasto"></td>
+                    <td id="ValorTotalRestante"></td>
                 </tr>
             </tbody>
         </table>
