@@ -1,6 +1,5 @@
 const selectBusca = document.querySelector('.selectBusca')
 const inputBusca = document.querySelector('.inputBusca')
-const buscarBtn = document.querySelector('.btn-outline-success')
 
 // buscarBtn.onclick = function(e){
 //     e.preventDefault()
