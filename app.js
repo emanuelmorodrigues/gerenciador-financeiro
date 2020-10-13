@@ -32,8 +32,10 @@ app.post('/', loginController.logar)
 
 app.get('/dashboard', contaController.buscarAll)
 app.delete('/del/:id', contaController.delete)
-app.post('/add:idUser', contaController.create)
-app.get('/buscar', contaController.busca)
+app.post('/add/:idUser', contaController.create)
+
+app.post('/buscar', contaController.busca)
+
 app.post('/atualizar/:id', contaController.update)
 
 app.get('/cadastro', userController.telaCadastro)

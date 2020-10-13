@@ -81,13 +81,29 @@ module.exports = {
 
     async busca(request, response){
         //const {id} = request.params
+        const {tipoBusca, valorBusca} = request.body
+    
+        let dadosBuscar;
+       // const idTest = "5f7fcad9319f6a01dad5e469";
+       if(tipoBusca == "descricao"){
+            dadosBuscar = await registros.find({
+                descricao: valorBusca, 
+            })
+       }
 
-        const idTest = "5f7fcad9319f6a01dad5e469";
-        const dados = await registros.find({
-            _id: idTest
-        })
+       if(tipoBusca == "valor"){
+            dadosBuscar = await registros.find({
+                valor: valorBusca, 
+            })
+        }
 
-        response.render('telaAtualizar',{ idTest:idTest, dados:dados})
+        if(tipoBusca == "data"){
+            dadosBuscar = await registros.find({
+                data: valorBusca, 
+            })
+        }
+        
+        response.render('telaResultadoBusca',{dadosBuscar:dadosBuscar})
     },
 
 }
