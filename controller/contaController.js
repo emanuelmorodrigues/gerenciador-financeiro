@@ -25,7 +25,7 @@ module.exports = {
     async buscarAll(request, response) {
         
         await registros.find().then(function(dados){
-            console.log(dados)
+            //console.log(dados)
 
             return response.render('telaPrincipal', {dados})
         })

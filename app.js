@@ -32,7 +32,7 @@ app.post('/', loginController.logar)
 
 app.get('/dashboard', contaController.buscarAll)
 app.delete('/del/:id', contaController.delete)
-app.post('/add/:idUser', contaController.create)
+app.post('/add/', contaController.create)
 
 app.post('/buscar', contaController.busca)
 
