@@ -17,11 +17,11 @@ module.exports = {
             registros = res;
         }).catch(err => {
             //response
-            response.send("SEM ACESSO AMIGO")
+            response.render("loginIncorreto")
         })
 
         if(registros !== null){
-            response.render("telaLogin",{user_id:registros._id})
+            response.render("telaBoasVindas",{user_id:registros._id})
             
             //response.redirect('/dashboard')
             

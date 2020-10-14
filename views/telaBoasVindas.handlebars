@@ -1,0 +1,9 @@
+<input type="hidden" id= "teste" value={{user_id}}>
+
+<script>
+            const id = document.getElementById("teste").value
+            localStorage.setItem('user_id', id)
+            if(id !== null){
+                location.assign('http://localhost:8081/dashboard')
+            }
+</script>

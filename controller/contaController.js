@@ -3,17 +3,17 @@ const registros = require("../database/modelRegistro")
 
 module.exports = {
     async create(request, response ) {
-        const {descricao, valor, data, despesa} = request.body
+        const {descricao, valor, data, despesa, user_id} = request.body
         //AQUI QUERIA PEGAR ESSE PARAMETRO, VER SE TU CONSEGUE MANDAR PELO FETCH LA PARA MIM
-        const id_user = request.headers.authorization;
-
-        console.log(id_user)
+        
+        console.log(user_id)
         
         await new registros({
             descricao,
             valor,
             data,
             despesa,
+            user_id: user_id
         }).save().then( res => {
             console.log("add com SUCESSO --" + res)
         }).catch( err =>{
@@ -26,8 +26,11 @@ module.exports = {
     },
 
     async buscarAll(request, response) {
-        
-        await registros.find().then(function(dados){
+        const {user_id} = request.body;
+        const id_teste = "5f872af82da4911f2c6869a0"
+        await registros.find({
+            user_id: id_teste
+        }).then(function(dados){
             //console.log(dados)
 
             return response.render('telaPrincipal', {dados})
