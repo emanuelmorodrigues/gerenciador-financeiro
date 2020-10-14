@@ -1,22 +1,26 @@
-  <form class="form-inline" action="http://localhost:8081/" method="POST">
-        <div class="form-group">
-            <input class="form-control" name="email" type="email" step="0.01" placeholder="Email" autocomplete="off">
-            <input class="form-control" name="senha" type="text" placeholder="Senha">
+    <div class="card card-login" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Login</h5>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço de e-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">Nós nunca iremos compartilhar seu e-mail com ninguém.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Senha</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <a href="http://localhost:8081/criarConta" class="card-link link-criar-login">Ainda tem não um login?</a>
         </div>
-
-        <button class="btn btn-primary" type="submit" onclick="salvaIdUser()">Entrar</button>
-    </form>
-</div>
-
-//isso é so para um teste 
-
-<input id= "teste" value={{user_id}}>
-
-<script>
+    </div>
+{{!-- <script>
 
 
-        const id = document.getElementById("teste").value
-        localStorage.setItem('user_id', id)
+        //const id = document.getElementById("teste").value
+        //localStorage.setItem('user_id', id)
             
-        location.assign('http://localhost:8081/dashboard')
-</script>
+        //location.assign('http://localhost:8081/dashboard')
+</script> --}}

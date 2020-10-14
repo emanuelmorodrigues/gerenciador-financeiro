@@ -6,6 +6,8 @@ module.exports = {
         const {descricao, valor, data, despesa} = request.body
         //AQUI QUERIA PEGAR ESSE PARAMETRO, VER SE TU CONSEGUE MANDAR PELO FETCH LA PARA MIM
         const id_user = request.headers.authorization;
+
+        console.log(id_user)
         
         await new registros({
             descricao,
@@ -19,6 +21,7 @@ module.exports = {
         })
 
        return response.redirect("/dashboard")
+       
 
     },
 

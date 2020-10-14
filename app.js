@@ -46,6 +46,10 @@ app.post('/buscarTeste', (req, res)=>{
     console.log(req.body)
 })
 
+app.get('/criarConta', (req, res)=>{
+    res.render('cadastroUser')
+})
+
 app.listen(port, ()=>{
     console.log(`Servidor rodando na porta ${port}`)
 })

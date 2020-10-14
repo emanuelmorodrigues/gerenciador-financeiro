@@ -38,6 +38,21 @@ header{
     display: none;
 }
 
+.card-criar-conta{
+    margin: auto;
+    margin-top: 150px;
+}
+
+.card-login{
+    margin: auto;
+    margin-top: 150px;
+}
+
+.link-criar-login{
+    display: block;
+    padding-top: 10px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
