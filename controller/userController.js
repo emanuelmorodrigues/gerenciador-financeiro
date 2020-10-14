@@ -2,11 +2,14 @@ const user = require("../database/modelUser")
 
 module.exports = {
     async create(request, response ) {
-        const {nome, sobroneme, email, senha} = request.body
-        const nomeCompleto = nome+sobroneme;
+        let {nome, sobrenome} = request.body
+        const {email, senha} = request.body
+
+        //nome completo
+        nome += " "+sobrenome;
         
         await new user({
-            nomeCompleto,
+            nome,
             email,
             senha,
         }).save().then( res => {
