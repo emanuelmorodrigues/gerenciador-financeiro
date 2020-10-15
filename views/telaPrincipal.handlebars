@@ -7,7 +7,7 @@
         </li>
         <div class="container-logout">
             <li class="nav-item">
-                <a href="http://localhost:8081/sair" class="nav-link btn btn-danger">Logout</a>
+                <a href="/sair" class="nav-link btn btn-danger">Logout</a>
             </li>
         </div>
     </ul>
@@ -15,7 +15,7 @@
 
 
 <div class="menu-insercao container">
-    <form class="form-inline" action="http://localhost:8081/add" method="POST">
+    <form class="form-inline" action="/add" method="POST">
         <div class="form-group">
             <input class="form-control" name="descricao" type="text" placeholder="Descrição" autocomplete="off"
                 maxlength="40">
@@ -35,7 +35,7 @@
 </div>
 
 <div class="menu-buscar container">
-    <form class="form-inline" action="http://localhost:8081/buscar" method="POST">
+    <form class="form-inline" action="/buscar" method="POST">
         <div class="form-group">
             <select class="form-control selectBusca" name="tipoBusca">
                 <option value="descricao">Descrição</option>
