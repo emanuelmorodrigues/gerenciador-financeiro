@@ -112,7 +112,8 @@ function somaGanhos(){
         return parseFloat(ganho.innerHTML)
     })
     const reducer = (accumulator, currentValue) => accumulator + currentValue
-    return resultadoTotalGanho.innerHTML = `${arrayGanhos.reduce(reducer).toFixed(2)}`
+    if(arrayGanhos.length > 0) return resultadoTotalGanho.innerHTML = `${arrayGanhos.reduce(reducer).toFixed(2)}`
+    else return resultadoTotalGanho.innerHTML = 0
 }
 
 
@@ -122,7 +123,8 @@ function somaGastos(){
         return parseFloat(gasto.innerHTML)
     })
     const reducer = (accumulator, currentValue) => accumulator + currentValue
-    return resultadoTotalGasto.innerHTML = `${arrayGastos.reduce(reducer).toFixed(2)}`
+    if(arrayGastos.length > 0) return resultadoTotalGasto.innerHTML = `${arrayGastos.reduce(reducer).toFixed(2)}`
+    else return resultadoTotalGasto.innerHTML = 0
     
 }
 

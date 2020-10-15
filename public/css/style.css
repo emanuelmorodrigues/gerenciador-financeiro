@@ -22,8 +22,8 @@ header{
     justify-content: space-around;
 }
 
-.resumo{
-    width: 25%;
+nav{
+    margin: 0 150px;
 }
 
 #actions {
@@ -36,6 +36,16 @@ header{
 
 .add {
     display: none;
+}
+
+.gastos, .ganhos{
+    width: 50%;
+    margin: 0 20px;
+}
+
+.resumo{
+    width: 50%;
+    margin: 0 20px;
 }
 
 .card-criar-conta{
