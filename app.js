@@ -3,7 +3,7 @@ const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const bodyparser = require('body-parser')
-const port = 8081
+const port = process.env.PORT || 8081
 
 
 const contaController = require('./controller/contaController');
