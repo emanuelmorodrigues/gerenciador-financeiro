@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "mongoose": "^5.10.8",
+    "node-localstorage": "^2.1.6",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {}

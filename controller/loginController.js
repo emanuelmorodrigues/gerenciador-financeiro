@@ -1,5 +1,7 @@
 const user = require("../database/modelUser")
 
+const localStorage = require("../config/storage")
+
 module.exports = {
 
     async telaLogin(request, response){
@@ -16,17 +18,18 @@ module.exports = {
         }).then(res => {
             users = res
         }).catch(err => {
-            //response
             response.render("loginIncorreto")
         })
 
         if(users !== null){
+
+            localStorage.setItem("logon", true)
+            localStorage.setItem("user_id", users._id )
             
-            response.render("telaBoasVindas",{user_id:users._id})
-            
-            //response.redirect('/dashboard')
+            response.redirect('/dashboard')
             
         }else{
+            localStorage.clear()
             return response.send("SEM ACESSO AMIGO")
         }
         

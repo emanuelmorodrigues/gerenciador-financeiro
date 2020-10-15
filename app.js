@@ -11,6 +11,12 @@ const contaController = require('./controller/contaController');
 
 const userController = require('./controller/userController');
 const loginController = require('./controller/loginController')
+
+
+//storage
+const localStorage = require("./config/storage")
+
+
 //Inicializando
 const app = express()
 
@@ -42,8 +48,11 @@ app.get('/cadastro', userController.telaCadastro)
 app.post('/cadastro', userController.create)
 
 // rota de teste
-app.post('/buscarTeste', (req, res)=>{
-    console.log(req.body)
+app.get('/sair', (req, res)=>{
+    if(localStorage.getItem("logon")){
+        localStorage.clear()
+        res.redirect("/")
+    }
 })
 
 app.get('/criarConta', (req, res)=>{

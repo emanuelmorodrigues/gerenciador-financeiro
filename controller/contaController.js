@@ -1,10 +1,14 @@
 const { update } = require("../database/modelRegistro")
 const registros = require("../database/modelRegistro")
 
+const localStorage = require("../config/storage")
+
 module.exports = {
     async create(request, response ) {
-        const {descricao, valor, data, despesa, user_id} = request.body
-        //AQUI QUERIA PEGAR ESSE PARAMETRO, VER SE TU CONSEGUE MANDAR PELO FETCH LA PARA MIM
+        const {descricao, valor, data, despesa} = request.body
+
+        const user_id = localStorage.getItem("user_id")
+       
         
         console.log(user_id)
         
@@ -26,14 +30,18 @@ module.exports = {
     },
 
     async buscarAll(request, response) {
-        const {user_id} = request.body;
-        const id_teste = "5f872af82da4911f2c6869a0"
-        await registros.find({
-            user_id: id_teste
-        }).then(function(dados){
-            //console.log(dados)
 
-            return response.render('telaPrincipal', {dados})
+        const user_id = localStorage.getItem("user_id")
+
+        await registros.find({
+            user_id: user_id
+        }).then(function(dados){
+            
+            if(localStorage.getItem("logon")){
+                return response.render('telaPrincipal', {dados})
+            }else{
+                response.redirect("/")
+            }
         })
     },
 
@@ -49,7 +57,7 @@ module.exports = {
         })
 
         response.status(200).send()
-        //return response.redirect("/") 
+       
     },
 
     async update(request, response){
@@ -82,30 +90,35 @@ module.exports = {
         })
 
         response.status(200).send()
-        //response.redirect("/")
+        
     },
 
     async busca(request, response){
-        //const {id} = request.params
+        
+
+        const user_id = localStorage.getItem("user_id")
         const {tipoBusca, valorBusca} = request.body
     
         let dadosBuscar;
-       // const idTest = "5f7fcad9319f6a01dad5e469";
+       
        if(tipoBusca == "descricao"){
             dadosBuscar = await registros.find({
+                user_id:user_id,
                 descricao: valorBusca, 
             })
        }
 
        if(tipoBusca == "valor"){
             dadosBuscar = await registros.find({
-                valor: valorBusca, 
+                valor: valorBusca,
+                user_id:user_id, 
             })
         }
 
         if(tipoBusca == "data"){
             dadosBuscar = await registros.find({
-                data: valorBusca, 
+                data: valorBusca,
+                user_id:user_id, 
             })
         }
         
