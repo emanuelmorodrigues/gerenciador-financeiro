@@ -8,20 +8,21 @@ module.exports = {
 
     async logar(request,response){
         const { email, senha} = request.body
-        let registros;
+        let users
 
         await user.findOne({
             email:email,
-            senha:senha
+            senha:senha,
         }).then(res => {
-            registros = res;
+            users = res
         }).catch(err => {
             //response
             response.render("loginIncorreto")
         })
 
-        if(registros !== null){
-            response.render("telaBoasVindas",{user_id:registros._id})
+        if(users !== null){
+            
+            response.render("telaBoasVindas",{user_id:users._id})
             
             //response.redirect('/dashboard')
             
