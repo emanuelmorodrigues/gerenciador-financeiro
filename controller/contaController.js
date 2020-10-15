@@ -13,7 +13,7 @@ module.exports = {
             valor,
             data,
             despesa,
-            user_id: user_id
+            user_id,
         }).save().then( res => {
             console.log("add com SUCESSO --" + res)
         }).catch( err =>{
