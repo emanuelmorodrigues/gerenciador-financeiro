@@ -1,6 +1,18 @@
 <header>
-    <h1>Gerenciador Financeiro 1.0</h1>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">
+                <h3>Gerenciador Financeiro</h3>
+            </a>
+        </li>
+        <div class="container-logout">
+            <li class="nav-item">
+                <a href="http://localhost:8081/dashboard" class="nav-link btn btn-dark">Voltar</a>
+            </li>
+        </div>
+    </ul>
 </header>
+
 <div class="menu-buscar container">
     <form class="form-inline" action="http://localhost:8081/buscar" method="POST">
         <div class="form-group">
@@ -9,11 +21,10 @@
                 <option value="valor">Valor</option>
                 <option value="data">Data</option>
             </select>
-            <input class="form-control" name="valorBusca" type="text" autocomplete="off">
+            <input class="form-control" name="valorBusca" type="text" step="0.01" autocomplete="off">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </div>
     </form>
-    <button class="btn btn-dark" type="submit" onclick="window.location='http://localhost:8081/dashboard'">Voltar</button>
 </div>
 
 <div class="container tables">
