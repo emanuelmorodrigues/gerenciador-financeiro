@@ -49,7 +49,7 @@ editBtn.forEach((edit)=>{
 
 function editarRegistro(id, obj){
     console.log(id, obj)
-    fetch(`http://localhost:8081/atualizar/${id}`,{
+    fetch(`/atualizar/${id}`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ deleteBtn.forEach((del)=>{
 })
 
 function deletarRegistro(id){
-    fetch(`http://localhost:8081/del/${id}`,{
+    fetch(`/del/${id}`,{
         method: 'DELETE'});
 
 }
