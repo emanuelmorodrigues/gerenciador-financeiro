@@ -18,7 +18,7 @@ module.exports = {
         }).then(res => {
             users = res
         }).catch(err => {
-            response.render("loginIncorreto")
+            
         })
 
         if(users !== null){
@@ -30,7 +30,7 @@ module.exports = {
             
         }else{
             localStorage.clear()
-            return response.send("SEM ACESSO AMIGO")
+            return response.send("<h1>Usuario ou senha incorretos</h1>")
         }
         
     }
