@@ -2,14 +2,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-header h1{
-    display: flex;
-    justify-content: center;
-}
 
-header{
-    margin-bottom: 25px;
-}
 
 .menu-insercao *, .menu-buscar *{
     margin: 0 5px;
@@ -50,7 +43,19 @@ nav{
 
 .card-criar-conta{
     margin: auto;
-    margin-top: 150px;
+}
+
+.container-login{
+    display: flex;
+}
+
+.header-criar-conta{
+    margin-top: 100px;
+}
+
+.card-seja-bem-vindo{
+    margin: auto;
+    margin-top: 50px;
 }
 
 .card-login{
@@ -61,6 +66,12 @@ nav{
 .link-criar-login{
     display: block;
     padding-top: 10px;
+}
+
+.container-logout{
+    position: absolute;
+    right: 5px;
+    top: 10px;
 }
 
 /* Chrome, Safari, Edge, Opera */

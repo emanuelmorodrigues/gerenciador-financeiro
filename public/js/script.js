@@ -26,9 +26,10 @@ editBtn.forEach((edit)=>{
             e.preventDefault()
 
             // Pegando os valores das linhas
+            const valor = parseFloat(trChilds[1].innerHTML).toFixed(2)
             const obj = {
                 descricao: trChilds[0].innerHTML,
-                valor: trChilds[1].innerHTML,
+                valor: valor,
                 data: trChilds[2].innerHTML,
             }
 
